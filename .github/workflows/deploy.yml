@@ -24,6 +24,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Check for required secrets
+        run: |
+          if [ -z "${{ secrets.GCP_PROJECT_ID }}" ] || [ -z "${{ secrets.GCP_SA_KEY }}" ]; then
+            echo "❌ Missing required secrets: GCP_PROJECT_ID and/or GCP_SA_KEY"
+            echo "ℹ️  Please set up Google Cloud authentication secrets in repository settings"
+            exit 1
+          fi
+          echo "✅ Required secrets are configured"
+
       - name: Google Auth
         id: auth
         uses: google-github-actions/auth@v2
