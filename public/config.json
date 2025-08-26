@@ -8,8 +8,7 @@
       "status": "active",
       "urls": {
         "app": "https://ratio.clocknumbers.com",
-        "prd": "https://github.com/sanpixel/ratio.ai/tree/dev/prd.md",
-        "todos": "https://github.com/sanpixel/ratio.ai/blob/main/todo.md",
+        "prd": "https://github.com/sanpixel/ratio.ai/blob/dev/PRD.md",
         "repo": "https://github.com/sanpixel/ratio.ai"
       },
       "lastModified": "2025-08-26",
@@ -25,8 +24,8 @@
       "urls": {
         "app": "https://ldr.clocknumbers.com",
         "streamlit": "https://streamlit.clocknumbers.com",
-        "prd": "https://github.com/sanpixel/ldr.ai/tree/dev/prd.md",
-        "todos": "https://github.com/sanpixel/ldr.ai/blob/main/todo.md",
+        "prd": "https://github.com/sanpixel/ldr.ai/blob/dev/PRD.md",
+        "todos": "https://github.com/sanpixel/ldr.ai/blob/dev/TODO.md",
         "repo": "https://github.com/sanpixel/ldr.ai"
       },
       "lastModified": "2025-08-26",
@@ -41,8 +40,6 @@
       "status": "active",
       "urls": {
         "app": "https://fantasy.clocknumbers.com",
-        "prd": "https://github.com/sanpixel/fantasy.ai/tree/dev/prd.md",
-        "todos": "https://github.com/sanpixel/fantasy.ai/blob/main/todo.md",
         "repo": "https://github.com/sanpixel/fantasy.ai"
       },
       "lastModified": "2025-08-26",
@@ -56,9 +53,9 @@
       "description": "Developer Home Dashboard - centralized project management",
       "status": "development",
       "urls": {
-        "app": "http://localhost:3000",
-        "prd": "https://github.com/sanpixel/basecamp/tree/dev/prd.md",
-        "todos": "https://github.com/sanpixel/basecamp/blob/main/todo.md",
+        "app": "https://basecamp-dashboard-kbrobedkgq-uc.a.run.app",
+        "prd": "https://github.com/sanpixel/basecamp/blob/master/prd.md",
+        "todos": "https://github.com/sanpixel/basecamp/blob/master/todo.md",
         "repo": "https://github.com/sanpixel/basecamp"
       },
       "lastModified": "2025-08-26",
