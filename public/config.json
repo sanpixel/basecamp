@@ -72,7 +72,7 @@
       "urls": {
         "app": "https://ratio.clocknumbers.com",
         "prd": "https://github.com/sanpixel/ratio.ai/blob/main/PRD.md",
-        "todos": "https://github.com/sanpixel/ratio.ai/blob/main/TODO.md",
+        "todos": "https://github.com/sanpixel/ratio.ai/blob/dev/TODO.md",
         "repo": "https://github.com/sanpixel/ratio.ai"
       },
       "lastModified": "2025-08-26",
