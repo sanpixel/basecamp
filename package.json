@@ -17,7 +17,8 @@
     "build": "npm run discover && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "discover": "node scripts/discover-projects.js"
+    "discover": "node scripts/discover-projects.js",
+    "update-projects": "npm run discover && git add public/config.json && git commit -m 'Auto-update project discovery' && git push"
   },
   "eslintConfig": {
     "extends": [
