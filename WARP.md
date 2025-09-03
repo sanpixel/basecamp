@@ -36,18 +36,27 @@ basecamp/
 - **Status Tracking**: Active, Development, Maintenance, Completed with color coding
 - **Priority Levels**: High/Medium/Low priority indicators
 - **Metadata Display**: Last modified dates, TODO counts, project IDs
+- **Project Deletion**: Password-protected hide functionality to remove projects from dashboard
 
 ### Navigation & Actions
 - **Quick Launch**: Direct buttons to open applications
 - **Repository Access**: One-click GitHub repository links
 - **Documentation**: Direct access to PRDs and TODO files
 - **Streamlit Apps**: Dedicated buttons for Streamlit applications
+- **TODO Navigation**: Click Active/Development stats to view aggregated TODOs
 
 ### Smart Features
 - **Cloud Run Warmup**: Automatically pings services on load to prevent cold starts
 - **Search & Filter**: Filter projects by name, description, and status
-- **Statistics Dashboard**: Project counts and status overview
+- **Statistics Dashboard**: Project counts and status overview with clickable navigation
 - **Responsive Design**: Works on desktop and mobile
+- **Real URL Detection**: Uses gcloud to detect actual Cloud Run service URLs
+
+### TODO Collaboration
+- **GitHub TODO Scraping**: Automatically fetches TODO.md files from project repositories
+- **Status-based Aggregation**: Separate pages for Active and Development project TODOs
+- **Smart Parsing**: Extracts incomplete TODOs with section grouping and line numbers
+- **Cross-project Overview**: Centralized view of all outstanding tasks by project status
 
 ## Project Configuration (config.json)
 Each project includes:

@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
+import ActiveTodosPage from './components/ActiveTodosPage';
+import DevelopmentTodosPage from './components/DevelopmentTodosPage';
 import './App.css';
 
 // Configuration for Cloud Run services to warm up
@@ -23,7 +26,13 @@ function App() {
 
   return (
     <div className="App">
-      <Dashboard />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/todos/active" element={<ActiveTodosPage />} />
+          <Route path="/todos/development" element={<DevelopmentTodosPage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

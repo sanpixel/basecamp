@@ -9,7 +9,10 @@
 - [x] Project ID badges (#2501, #2502, etc.)
 
 ## Phase 2: TODO Integration
-- [ ] Cross-project TODO aggregation and display
+- [x] Cross-project TODO aggregation and display
+- [x] Clickable stats navigation to TODO pages
+- [x] TODO scraping from GitHub repos
+- [x] Project delete/hide functionality with password protection
 - [ ] Interactive TODO management (add, complete, prioritize)
 - [ ] TODO filtering by project, status, and priority
 - [ ] Real-time TODO count indicators on project cards

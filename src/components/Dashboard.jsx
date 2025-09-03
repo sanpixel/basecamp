@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ProjectCard from './ProjectCard';
 import SearchFilter from './SearchFilter';
 import './Dashboard.css';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [projects, setProjects] = useState([]);
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -91,13 +93,21 @@ const Dashboard = () => {
           <span className="stat-number">{projects.length}</span>
           <span className="stat-label">Total Projects</span>
         </div>
-        <div className="stat">
+        <div 
+          className="stat clickable" 
+          onClick={() => navigate('/todos/active')}
+          title="View active project TODOs"
+        >
           <span className="stat-number">
             {projects.filter(p => p.status === 'active').length}
           </span>
           <span className="stat-label">Active</span>
         </div>
-        <div className="stat">
+        <div 
+          className="stat clickable" 
+          onClick={() => navigate('/todos/development')}
+          title="View development project TODOs"
+        >
           <span className="stat-number">
             {projects.filter(p => p.status === 'development').length}
           </span>
