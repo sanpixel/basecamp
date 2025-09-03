@@ -1,8 +1,30 @@
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const DEV_DIR = 'C:\\dev';
 const CONFIG_PATH = path.join(__dirname, '..', 'public', 'config.json');
+
+// Get all Cloud Run services and their URLs
+function getCloudRunServices() {
+  try {
+    const output = execSync('gcloud run services list --format="csv(metadata.name,status.url)"', { encoding: 'utf8' });
+    const lines = output.trim().split('\n').slice(1); // Skip header
+    const services = {};
+    
+    for (const line of lines) {
+      const [name, url] = line.split(',');
+      if (name && url) {
+        services[name] = url;
+      }
+    }
+    
+    return services;
+  } catch (error) {
+    console.error('Error getting Cloud Run services:', error.message);
+    return {};
+  }
+}
 
 // Read existing config
 function readExistingConfig() {
@@ -28,8 +50,8 @@ function isProject(dirPath) {
          fs.existsSync(readme);
 }
 
-// Extract project info
-function getProjectInfo(dirPath, dirName) {
+// Extract project info with Cloud Run URL detection
+function getProjectInfo(dirPath, dirName, cloudRunServices) {
   const packageJsonPath = path.join(dirPath, 'package.json');
   const readmePath = path.join(dirPath, 'README.md');
   const todoPath = path.join(dirPath, 'TODO.md');
@@ -64,6 +86,52 @@ function getProjectInfo(dirPath, dirName) {
   const stats = fs.statSync(dirPath);
   const lastModified = stats.mtime.toISOString().split('T')[0];
   
+  // Find real Cloud Run URL
+  const possibleServiceNames = [
+    dirName.replace('.', '-'),  // ratio.ai -> ratio-ai
+    dirName,                    // exact match
+    `${dirName}-ai`,           // if it doesn't have -ai already
+    `${dirName.replace('.ai', '')}-ai`, // normalize -ai ending
+  ];
+  
+  let appUrl = `https://${dirName.replace('.', '-')}-kbrobedkgq-uc.a.run.app`; // Default
+  let streamlitUrl = null;
+  
+  // Try to find real Cloud Run service
+  for (const serviceName of possibleServiceNames) {
+    if (cloudRunServices[serviceName]) {
+      appUrl = cloudRunServices[serviceName];
+      console.log(`  Found Cloud Run service: ${serviceName} → ${appUrl}`);
+      break;
+    }
+  }
+  
+  // Check for Streamlit service
+  const streamlitFiles = ['app.py', 'main.py', 'streamlit_app.py'];
+  for (const file of streamlitFiles) {
+    if (fs.existsSync(path.join(dirPath, file))) {
+      const streamlitServiceName = `${dirName.replace('.', '-')}-streamlit`;
+      if (cloudRunServices[streamlitServiceName]) {
+        streamlitUrl = cloudRunServices[streamlitServiceName];
+        console.log(`  Found Streamlit service: ${streamlitServiceName} → ${streamlitUrl}`);
+      } else {
+        streamlitUrl = 'https://ldr-streamlit-kbrobedkgq-uc.a.run.app'; // Default
+      }
+      break;
+    }
+  }
+  
+  const urls = {
+    app: appUrl,
+    repo: `https://github.com/sanpixel/${dirName}`,
+    prd: `https://github.com/sanpixel/${dirName}/blob/main/PRD.md`,
+    todos: `https://github.com/sanpixel/${dirName}/blob/main/TODO.md`
+  };
+  
+  if (streamlitUrl) {
+    urls.streamlit = streamlitUrl;
+  }
+  
   return {
     id: Math.floor(Math.random() * 9000) + 1000, // Random 4-digit ID
     name: dirName,
@@ -73,12 +141,7 @@ function getProjectInfo(dirPath, dirName) {
     priority: 'medium',
     lastModified: lastModified,
     todoCount: todoCount,
-    urls: {
-      app: `https://${dirName.replace('.', '-')}.clocknumbers.com`,
-      repo: `https://github.com/sanpixel/${dirName}`,
-      prd: `https://github.com/sanpixel/${dirName}/blob/main/PRD.md`,
-      todos: `https://github.com/sanpixel/${dirName}/blob/main/TODO.md`
-    }
+    urls: urls
   };
 }
 
@@ -86,6 +149,10 @@ function getProjectInfo(dirPath, dirName) {
 function discoverProjects() {
   const config = readExistingConfig();
   const existingNames = config.projects.map(p => p.name);
+  
+  console.log('Getting Cloud Run services...');
+  const cloudRunServices = getCloudRunServices();
+  console.log(`Found ${Object.keys(cloudRunServices).length} Cloud Run services`);
   
   console.log('Scanning C:\\dev for projects...');
   
@@ -108,7 +175,7 @@ function discoverProjects() {
       
       // Check if it looks like a project
       if (isProject(fullPath)) {
-        const projectInfo = getProjectInfo(fullPath, entry);
+        const projectInfo = getProjectInfo(fullPath, entry, cloudRunServices);
         config.projects.push(projectInfo);
         console.log(`Added new project: ${entry}`);
       }

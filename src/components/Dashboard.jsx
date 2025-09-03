@@ -62,6 +62,12 @@ const Dashboard = () => {
     window.open(url, '_blank');
   };
 
+  const deleteProject = (projectName) => {
+    const updatedProjects = projects.filter(p => p.name !== projectName);
+    setProjects(updatedProjects);
+    console.log(`Removed project: ${projectName}`);
+  };
+
   if (loading) {
     return (
       <div className="dashboard-loading">
@@ -110,6 +116,7 @@ const Dashboard = () => {
               key={project.name}
               project={project}
               onOpenUrl={openUrl}
+              onDeleteProject={deleteProject}
             />
           ))
         )}

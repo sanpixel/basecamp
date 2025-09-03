@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProjectCard = ({ project, onOpenUrl }) => {
+const ProjectCard = ({ project, onOpenUrl, onDeleteProject }) => {
   const getStatusColor = (status) => {
     switch (status) {
       case 'active':
@@ -123,6 +123,24 @@ const ProjectCard = ({ project, onOpenUrl }) => {
         >
           <span className="action-icon">✅</span>
           TODOs
+        </button>
+        
+        <button
+          className="action-button danger"
+          onClick={() => {
+            const password = prompt('Enter password to delete project:');
+            if (password === 'warez') {
+              if (window.confirm(`Are you sure you want to remove ${project.name} from the dashboard?`)) {
+                onDeleteProject(project.name);
+              }
+            } else if (password !== null) {
+              alert('Incorrect password');
+            }
+          }}
+          title="Remove Project"
+        >
+          <span className="action-icon">🗑️</span>
+          Delete
         </button>
       </div>
     </div>
