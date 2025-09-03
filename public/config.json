@@ -1,32 +1,16 @@
 {
   "projects": [
     {
-      "id": "2501",
-      "name": "ratio.ai",
-      "path": "C:\\dev\\ratio.ai",
-      "description": "AI-powered recipe optimization platform",
-      "status": "active",
+      "id": "2504",
+      "name": "basecamp",
+      "path": "C:\\dev\\home\\basecamp",
+      "description": "Developer Home Dashboard - centralized project management",
+      "status": "development",
       "urls": {
-        "app": "https://ratio.clocknumbers.com",
-        "prd": "https://github.com/sanpixel/ratio.ai/blob/dev/PRD.md",
-        "repo": "https://github.com/sanpixel/ratio.ai"
-      },
-      "lastModified": "2025-08-26",
-      "priority": "high",
-      "todoCount": 0
-    },
-    {
-      "id": "2502",
-      "name": "ldr.ai",
-      "path": "C:\\dev\\ldr.ai",
-      "description": "Leadership development AI platform",
-      "status": "active",
-      "urls": {
-        "app": "https://ldr.clocknumbers.com",
-        "streamlit": "https://streamlit.clocknumbers.com",
-        "prd": "https://github.com/sanpixel/ldr.ai/blob/dev/PRD.md",
-        "todos": "https://github.com/sanpixel/ldr.ai/blob/dev/TODO.md",
-        "repo": "https://github.com/sanpixel/ldr.ai"
+        "app": "https://basecamp-dashboard-kbrobedkgq-uc.a.run.app",
+        "prd": "https://github.com/sanpixel/basecamp/blob/master/prd.md",
+        "todos": "https://github.com/sanpixel/basecamp/blob/master/todo.md",
+        "repo": "https://github.com/sanpixel/basecamp"
       },
       "lastModified": "2025-08-26",
       "priority": "high",
@@ -47,20 +31,100 @@
       "todoCount": 0
     },
     {
-      "id": "2504",
-      "name": "basecamp",
-      "path": "C:\\dev\\home\\basecamp",
-      "description": "Developer Home Dashboard - centralized project management",
+      "id": 4375,
+      "name": "fbg.ai",
+      "path": "C:\\dev\\fbg.ai",
+      "description": "Project in fbg.ai",
       "status": "development",
+      "priority": "medium",
+      "lastModified": "2025-08-26",
+      "todoCount": 0,
       "urls": {
-        "app": "https://basecamp-dashboard-kbrobedkgq-uc.a.run.app",
-        "prd": "https://github.com/sanpixel/basecamp/blob/master/prd.md",
-        "todos": "https://github.com/sanpixel/basecamp/blob/master/todo.md",
-        "repo": "https://github.com/sanpixel/basecamp"
+        "app": "https://fbg-ai.clocknumbers.com",
+        "repo": "https://github.com/sanpixel/fbg.ai",
+        "prd": "https://github.com/sanpixel/fbg.ai/blob/main/PRD.md",
+        "todos": "https://github.com/sanpixel/fbg.ai/blob/main/TODO.md"
+      }
+    },
+    {
+      "id": "2502",
+      "name": "ldr.ai",
+      "path": "C:\\dev\\ldr.ai",
+      "description": "Leadership development AI platform",
+      "status": "active",
+      "urls": {
+        "app": "https://ldr.clocknumbers.com",
+        "streamlit": "https://streamlit.clocknumbers.com",
+        "prd": "https://github.com/sanpixel/ldr.ai/blob/dev/PRD.md",
+        "todos": "https://github.com/sanpixel/ldr.ai/blob/dev/TODO.md",
+        "repo": "https://github.com/sanpixel/ldr.ai"
       },
       "lastModified": "2025-08-26",
       "priority": "high",
       "todoCount": 0
+    },
+    {
+      "id": "2501",
+      "name": "ratio.ai",
+      "path": "C:\\dev\\ratio.ai",
+      "description": "AI-powered recipe optimization platform",
+      "status": "active",
+      "urls": {
+        "app": "https://ratio.clocknumbers.com",
+        "prd": "https://github.com/sanpixel/ratio.ai/blob/dev/PRD.md",
+        "repo": "https://github.com/sanpixel/ratio.ai"
+      },
+      "lastModified": "2025-08-26",
+      "priority": "high",
+      "todoCount": 0
+    },
+    {
+      "id": 2205,
+      "name": "surveydisco.ai",
+      "path": "C:\\dev\\surveydisco.ai",
+      "description": "Project in surveydisco.ai",
+      "status": "development",
+      "priority": "medium",
+      "lastModified": "2025-09-01",
+      "todoCount": 0,
+      "urls": {
+        "app": "https://surveydisco-ai.clocknumbers.com",
+        "repo": "https://github.com/sanpixel/surveydisco.ai",
+        "prd": "https://github.com/sanpixel/surveydisco.ai/blob/main/PRD.md",
+        "todos": "https://github.com/sanpixel/surveydisco.ai/blob/main/TODO.md"
+      }
+    },
+    {
+      "id": 4146,
+      "name": "take2",
+      "path": "C:\\dev\\take2",
+      "description": "Project in take2",
+      "status": "development",
+      "priority": "medium",
+      "lastModified": "2025-09-02",
+      "todoCount": 0,
+      "urls": {
+        "app": "https://take2.clocknumbers.com",
+        "repo": "https://github.com/sanpixel/take2",
+        "prd": "https://github.com/sanpixel/take2/blob/main/PRD.md",
+        "todos": "https://github.com/sanpixel/take2/blob/main/TODO.md"
+      }
+    },
+    {
+      "id": 2197,
+      "name": "you-can-do-it",
+      "path": "C:\\dev\\you-can-do-it",
+      "description": "Project in you-can-do-it",
+      "status": "development",
+      "priority": "medium",
+      "lastModified": "2025-09-01",
+      "todoCount": 0,
+      "urls": {
+        "app": "https://you-can-do-it.clocknumbers.com",
+        "repo": "https://github.com/sanpixel/you-can-do-it",
+        "prd": "https://github.com/sanpixel/you-can-do-it/blob/main/PRD.md",
+        "todos": "https://github.com/sanpixel/you-can-do-it/blob/main/TODO.md"
+      }
     }
   ]
 }
