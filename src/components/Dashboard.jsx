@@ -84,7 +84,22 @@ const Dashboard = () => {
       <header className="dashboard-header">
         <h1>ClockNumbers Developer Basecamp</h1>
         <p className="dashboard-subtitle">
-          Your centralized hub for all development projects
+          <span 
+            style={{cursor: 'pointer', textDecoration: 'underline'}} 
+            onClick={() => window.open('https://console.cloud.google.com', '_blank')}
+          >
+            Your
+          </span> <span 
+            style={{cursor: 'pointer', textDecoration: 'underline'}} 
+            onClick={() => window.open('https://github.com', '_blank')}
+          >
+            centralized
+          </span> <span 
+            style={{cursor: 'pointer', textDecoration: 'underline'}} 
+            onClick={() => window.open('https://supabase.com/dashboard/project/liisrjaardnnvoeptzhd', '_blank')}
+          >
+            hub
+          </span> for all development projects
         </p>
       </header>
 

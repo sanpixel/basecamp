@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Links</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .main-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 600;
+        }
+        
+        .main-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+        
+        .individual-links {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .individual-links a {
+            display: inline-block;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            color: #667eea;
+            text-decoration: none;
+            border: 1px solid #667eea;
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        
+        .individual-links a:hover {
+            background: #667eea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Development Tools</h1>
+        <div style="margin-bottom: 1.5rem;">
+            <button class="main-button" onclick="openUrl('https://console.cloud.google.com')">
+                Open Google Console
+            </button>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <button class="main-button" onclick="openUrl('https://github.com')">
+                Open GitHub
+            </button>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <button class="main-button" onclick="openUrl('https://supabase.com/dashboard/project/liisrjaardnnvoeptzhd')">
+                Open Supabase
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function openUrl(url) {
+            window.open(url, '_blank', 'width=1200,height=800,scrollbars=yes,resizable=yes');
+        }
+    </script>
+</body>
+</html>
