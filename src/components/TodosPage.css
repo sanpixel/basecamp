@@ -224,6 +224,70 @@
   font-weight: 500;
 }
 
+/* Drag and Drop Styles */
+.todo-item.sortable {
+  cursor: grab;
+  user-select: none;
+}
+
+.todo-item.sortable:active {
+  cursor: grabbing;
+}
+
+.drag-handle {
+  color: #6b7280;
+  font-size: 1.2rem;
+  line-height: 1;
+  margin-top: 4px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.todo-item:hover .drag-handle {
+  opacity: 1;
+  color: #9ca3af;
+}
+
+.todo-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #9ca3af;
+  font-size: 0.75rem;
+  gap: 4px;
+}
+
+/* When being dragged */
+.todo-item.sortable[data-state="dragging"] {
+  opacity: 0.5;
+  transform: rotate(5deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+/* Drop zone indicator */
+.todos-list {
+  position: relative;
+}
+
+/* Mobile touch improvements */
+@media (max-width: 768px) {
+  .todo-item.sortable {
+    touch-action: none;
+  }
+  
+  .drag-handle {
+    font-size: 1.4rem;
+    opacity: 1;
+  }
+  
+  .todo-meta {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
 .no-todos-project {
   text-align: center;
   padding: 30px;

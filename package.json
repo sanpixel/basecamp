@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
@@ -20,7 +23,8 @@
     "eject": "react-scripts eject",
     "discover": "node scripts/discover-projects.js",
     "detect-urls": "node scripts/detect-urls.js",
-    "update-projects": "npm run discover && git add public/config.json && git commit -m \"Auto-update project discovery\" && git push"
+    "update-projects": "npm run discover && git add public/config.json && git commit -m \"Auto-update project discovery\" && git push",
+    "reset-projects": "del /q public\\config.json 2>nul & npm run discover && git add public/config.json && git commit -m \"Reset project discovery\" && git push"
   },
   "eslintConfig": {
     "extends": [

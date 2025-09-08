@@ -50,8 +50,43 @@ function isProject(dirPath) {
          fs.existsSync(readme);
 }
 
+// Function to check if GitHub URL exists
+async function checkGitHubUrl(url) {
+  try {
+    const https = require('https');
+    return new Promise((resolve) => {
+      const req = https.request(url, { method: 'HEAD' }, (res) => {
+        resolve(res.statusCode === 200);
+      });
+      req.on('error', () => resolve(false));
+      req.setTimeout(5000, () => {
+        req.destroy();
+        resolve(false);
+      });
+      req.end();
+    });
+  } catch (error) {
+    return false;
+  }
+}
+
+// Function to find correct GitHub branch for file
+async function findGitHubFile(dirName, fileName) {
+  const branches = ['master', 'dev', 'main'];
+  
+  for (const branch of branches) {
+    const url = `https://github.com/sanpixel/${dirName}/blob/${branch}/${fileName}`;
+    if (await checkGitHubUrl(url)) {
+      return url;
+    }
+  }
+  
+  // Fallback to master if none found
+  return `https://github.com/sanpixel/${dirName}/blob/master/${fileName}`;
+}
+
 // Extract project info with Cloud Run URL detection
-function getProjectInfo(dirPath, dirName, cloudRunServices) {
+async function getProjectInfo(dirPath, dirName, cloudRunServices) {
   const packageJsonPath = path.join(dirPath, 'package.json');
   const readmePath = path.join(dirPath, 'README.md');
   const todoPath = path.join(dirPath, 'TODO.md');
@@ -71,7 +106,7 @@ function getProjectInfo(dirPath, dirName, cloudRunServices) {
     }
   }
   
-  // Count TODOs if file exists
+  // Count TODOs if file exists locally
   if (fs.existsSync(todoPath)) {
     try {
       const todoContent = fs.readFileSync(todoPath, 'utf8');
@@ -121,11 +156,15 @@ function getProjectInfo(dirPath, dirName, cloudRunServices) {
     }
   }
   
+  // Find correct GitHub URLs for PRD and TODO files
+  const prdUrl = await findGitHubFile(dirName, 'PRD.md');
+  const todoUrl = await findGitHubFile(dirName, 'TODO.md');
+  
   const urls = {
     app: appUrl,
     repo: `https://github.com/sanpixel/${dirName}`,
-    prd: `https://github.com/sanpixel/${dirName}/blob/main/PRD.md`,
-    todos: `https://github.com/sanpixel/${dirName}/blob/main/TODO.md`
+    prd: prdUrl,
+    todos: todoUrl
   };
   
   if (streamlitUrl) {
@@ -146,7 +185,7 @@ function getProjectInfo(dirPath, dirName, cloudRunServices) {
 }
 
 // Discover new projects
-function discoverProjects() {
+async function discoverProjects() {
   const config = readExistingConfig();
   const existingNames = config.projects.map(p => p.name);
   
@@ -175,7 +214,7 @@ function discoverProjects() {
       
       // Check if it looks like a project
       if (isProject(fullPath)) {
-        const projectInfo = getProjectInfo(fullPath, entry, cloudRunServices);
+        const projectInfo = await getProjectInfo(fullPath, entry, cloudRunServices);
         config.projects.push(projectInfo);
         console.log(`Added new project: ${entry}`);
       }
@@ -194,4 +233,6 @@ function discoverProjects() {
 }
 
 // Run the discovery
-discoverProjects();
+(async () => {
+  await discoverProjects();
+})();

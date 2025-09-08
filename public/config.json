@@ -17,6 +17,38 @@
       }
     },
     {
+      "id": 7701,
+      "name": "basecamp",
+      "path": "C:\\dev\\basecamp",
+      "description": "Project in basecamp",
+      "status": "development",
+      "priority": "medium",
+      "lastModified": "2025-09-08",
+      "todoCount": 15,
+      "urls": {
+        "app": "https://basecamp-kbrobedkgq-uc.a.run.app",
+        "repo": "https://github.com/sanpixel/basecamp",
+        "prd": "https://github.com/sanpixel/basecamp/blob/master/PRD.md",
+        "todos": "https://github.com/sanpixel/basecamp/blob/master/TODO.md"
+      }
+    },
+    {
+      "id": 2194,
+      "name": "eights",
+      "path": "C:\\dev\\eights",
+      "description": "Project in eights",
+      "status": "development",
+      "priority": "medium",
+      "lastModified": "2025-09-08",
+      "todoCount": 0,
+      "urls": {
+        "app": "https://eights-kbrobedkgq-uc.a.run.app\r",
+        "repo": "https://github.com/sanpixel/eights",
+        "prd": "https://github.com/sanpixel/eights/blob/master/PRD.md",
+        "todos": "https://github.com/sanpixel/eights/blob/master/TODO.md"
+      }
+    },
+    {
       "id": 2213,
       "name": "fbg.ai",
       "path": "C:\\dev\\fbg.ai",
