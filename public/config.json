@@ -1,7 +1,7 @@
 {
   "projects": [
     {
-      "id": 7914,
+      "id": 1725,
       "name": "again",
       "path": "C:\\dev\\again",
       "description": "Project in again",
@@ -17,86 +17,57 @@
       }
     },
     {
-      "id": "2504",
-      "name": "basecamp",
-      "path": "C:\\dev\\home\\basecamp",
-      "description": "Developer Home Dashboard - centralized project management",
-      "status": "development",
-      "urls": {
-        "app": "https://basecamp-dashboard-kbrobedkgq-uc.a.run.app",
-        "prd": "https://github.com/sanpixel/basecamp/blob/master/prd.md",
-        "todos": "https://github.com/sanpixel/basecamp/blob/master/todo.md",
-        "repo": "https://github.com/sanpixel/basecamp"
-      },
-      "lastModified": "2025-08-26",
-      "priority": "high",
-      "todoCount": 0
-    },
-    {
-      "id": "2503",
-      "name": "fantasy.ai",
-      "path": "C:\\dev\\fantasy.ai",
-      "description": "Fantasy tier game platform",
-      "status": "active",
-      "urls": {
-        "app": "https://fantasy.clocknumbers.com",
-        "repo": "https://github.com/sanpixel/fantasy.ai"
-      },
-      "lastModified": "2025-08-26",
-      "priority": "medium",
-      "todoCount": 0
-    },
-    {
-      "id": 4375,
+      "id": 2213,
       "name": "fbg.ai",
       "path": "C:\\dev\\fbg.ai",
       "description": "Project in fbg.ai",
       "status": "development",
       "priority": "medium",
-      "lastModified": "2025-08-26",
-      "todoCount": 0,
+      "lastModified": "2025-09-03",
+      "todoCount": 27,
       "urls": {
-        "app": "https://fbg-ai.clocknumbers.com",
+        "app": "https://fbg-ai-kbrobedkgq-uc.a.run.app\r",
         "repo": "https://github.com/sanpixel/fbg.ai",
         "prd": "https://github.com/sanpixel/fbg.ai/blob/main/PRD.md",
-        "todos": "https://github.com/sanpixel/fbg.ai/blob/main/TODO.md"
+        "todos": "https://github.com/sanpixel/fbg.ai/blob/main/TODO.md",
+        "streamlit": "https://ldr-streamlit-kbrobedkgq-uc.a.run.app"
       }
     },
     {
-      "id": "2502",
+      "id": 3098,
       "name": "ldr.ai",
       "path": "C:\\dev\\ldr.ai",
-      "description": "Leadership development AI platform",
-      "status": "active",
+      "description": "Project in ldr.ai",
+      "status": "development",
+      "priority": "medium",
+      "lastModified": "2025-09-01",
+      "todoCount": 25,
       "urls": {
-        "app": "https://ldr.clocknumbers.com",
-        "streamlit": "https://streamlit.clocknumbers.com",
-        "prd": "https://github.com/sanpixel/ldr.ai/blob/dev/PRD.md",
-        "todos": "https://github.com/sanpixel/ldr.ai/blob/dev/TODO.md",
-        "repo": "https://github.com/sanpixel/ldr.ai"
-      },
-      "lastModified": "2025-08-26",
-      "priority": "high",
-      "todoCount": 0
+        "app": "https://ldr-ai-kbrobedkgq-uc.a.run.app\r",
+        "repo": "https://github.com/sanpixel/ldr.ai",
+        "prd": "https://github.com/sanpixel/ldr.ai/blob/main/PRD.md",
+        "todos": "https://github.com/sanpixel/ldr.ai/blob/main/TODO.md",
+        "streamlit": "https://ldr-streamlit-kbrobedkgq-uc.a.run.app"
+      }
     },
     {
-      "id": "2501",
+      "id": 3293,
       "name": "ratio.ai",
       "path": "C:\\dev\\ratio.ai",
-      "description": "AI-powered recipe optimization platform",
-      "status": "active",
+      "description": "Project in ratio.ai",
+      "status": "development",
+      "priority": "medium",
+      "lastModified": "2025-09-03",
+      "todoCount": 31,
       "urls": {
-        "app": "https://ratio.clocknumbers.com",
+        "app": "https://ratio-ai-kbrobedkgq-uc.a.run.app\r",
+        "repo": "https://github.com/sanpixel/ratio.ai",
         "prd": "https://github.com/sanpixel/ratio.ai/blob/main/PRD.md",
-        "todos": "https://github.com/sanpixel/ratio.ai/blob/dev/TODO.md",
-        "repo": "https://github.com/sanpixel/ratio.ai"
-      },
-      "lastModified": "2025-08-26",
-      "priority": "high",
-      "todoCount": 0
+        "todos": "https://github.com/sanpixel/ratio.ai/blob/main/TODO.md"
+      }
     },
     {
-      "id": 2205,
+      "id": 9421,
       "name": "surveydisco.ai",
       "path": "C:\\dev\\surveydisco.ai",
       "description": "Project in surveydisco.ai",
@@ -105,42 +76,10 @@
       "lastModified": "2025-09-01",
       "todoCount": 0,
       "urls": {
-        "app": "https://surveydisco-ai.clocknumbers.com",
+        "app": "https://surveydisco-ai-kbrobedkgq-uc.a.run.app",
         "repo": "https://github.com/sanpixel/surveydisco.ai",
         "prd": "https://github.com/sanpixel/surveydisco.ai/blob/main/PRD.md",
         "todos": "https://github.com/sanpixel/surveydisco.ai/blob/main/TODO.md"
-      }
-    },
-    {
-      "id": 4146,
-      "name": "take2",
-      "path": "C:\\dev\\take2",
-      "description": "Project in take2",
-      "status": "development",
-      "priority": "medium",
-      "lastModified": "2025-09-02",
-      "todoCount": 0,
-      "urls": {
-        "app": "https://take2.clocknumbers.com",
-        "repo": "https://github.com/sanpixel/take2",
-        "prd": "https://github.com/sanpixel/take2/blob/main/PRD.md",
-        "todos": "https://github.com/sanpixel/take2/blob/main/TODO.md"
-      }
-    },
-    {
-      "id": 2197,
-      "name": "you-can-do-it",
-      "path": "C:\\dev\\you-can-do-it",
-      "description": "Project in you-can-do-it",
-      "status": "development",
-      "priority": "medium",
-      "lastModified": "2025-09-01",
-      "todoCount": 0,
-      "urls": {
-        "app": "https://you-can-do-it.clocknumbers.com",
-        "repo": "https://github.com/sanpixel/you-can-do-it",
-        "prd": "https://github.com/sanpixel/you-can-do-it/blob/main/PRD.md",
-        "todos": "https://github.com/sanpixel/you-can-do-it/blob/main/TODO.md"
       }
     }
   ]
