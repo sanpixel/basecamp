@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": 7701,
+      "id": 4259,
       "name": "basecamp",
       "path": "C:\\dev\\basecamp",
       "description": "Project in basecamp",
@@ -28,12 +28,12 @@
       "urls": {
         "app": "https://basecamp-kbrobedkgq-uc.a.run.app",
         "repo": "https://github.com/sanpixel/basecamp",
-        "prd": "https://github.com/sanpixel/basecamp/blob/master/PRD.md",
-        "todos": "https://github.com/sanpixel/basecamp/blob/master/TODO.md"
+        "prd": "https://github.com/sanpixel/basecamp/blob/main/PRD.md",
+        "todos": "https://github.com/sanpixel/basecamp/blob/main/TODO.md"
       }
     },
     {
-      "id": 2194,
+      "id": 6893,
       "name": "eights",
       "path": "C:\\dev\\eights",
       "description": "Project in eights",
@@ -44,8 +44,42 @@
       "urls": {
         "app": "https://eights-kbrobedkgq-uc.a.run.app\r",
         "repo": "https://github.com/sanpixel/eights",
-        "prd": "https://github.com/sanpixel/eights/blob/master/PRD.md",
-        "todos": "https://github.com/sanpixel/eights/blob/master/TODO.md"
+        "prd": "https://github.com/sanpixel/eights/blob/main/PRD.md",
+        "todos": "https://github.com/sanpixel/eights/blob/main/TODO.md"
+      }
+    },
+    {
+      "id": 6755,
+      "name": "fantasy.ai",
+      "path": "C:\\dev\\fantasy.ai",
+      "description": "Project in fantasy.ai",
+      "status": "development",
+      "priority": "medium",
+      "lastModified": "2025-09-03",
+      "todoCount": 27,
+      "urls": {
+        "app": "https://fantasy-ai-kbrobedkgq-uc.a.run.app",
+        "repo": "https://github.com/sanpixel/fantasy.ai",
+        "prd": "https://github.com/sanpixel/fantasy.ai/blob/main/PRD.md",
+        "todos": "https://github.com/sanpixel/fantasy.ai/blob/main/TODO.md",
+        "streamlit": "https://ldr-streamlit-kbrobedkgq-uc.a.run.app"
+      }
+    },
+    {
+      "id": 8893,
+      "name": "fantasy.old",
+      "path": "C:\\dev\\fantasy.old",
+      "description": "Project in fantasy.old",
+      "status": "development",
+      "priority": "medium",
+      "lastModified": "2025-09-08",
+      "todoCount": 27,
+      "urls": {
+        "app": "https://fantasy-old-kbrobedkgq-uc.a.run.app",
+        "repo": "https://github.com/sanpixel/fantasy.old",
+        "prd": "https://github.com/sanpixel/fantasy.old/blob/main/PRD.md",
+        "todos": "https://github.com/sanpixel/fantasy.old/blob/main/TODO.md",
+        "streamlit": "https://ldr-streamlit-kbrobedkgq-uc.a.run.app"
       }
     },
     {
@@ -80,6 +114,22 @@
         "prd": "https://github.com/sanpixel/ldr.ai/blob/main/PRD.md",
         "todos": "https://github.com/sanpixel/ldr.ai/blob/main/TODO.md",
         "streamlit": "https://ldr-streamlit-kbrobedkgq-uc.a.run.app"
+      }
+    },
+    {
+      "id": 2962,
+      "name": "next",
+      "path": "C:\\dev\\next",
+      "description": "Project in next",
+      "status": "development",
+      "priority": "medium",
+      "lastModified": "2025-09-08",
+      "todoCount": 0,
+      "urls": {
+        "app": "https://next-kbrobedkgq-uc.a.run.app\r",
+        "repo": "https://github.com/sanpixel/next",
+        "prd": "https://github.com/sanpixel/next/blob/main/PRD.md",
+        "todos": "https://github.com/sanpixel/next/blob/main/TODO.md"
       }
     },
     {
