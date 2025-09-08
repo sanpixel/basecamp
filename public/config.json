@@ -66,6 +66,23 @@
       }
     },
     {
+      "id": 8893,
+      "name": "fantasy.old",
+      "path": "C:\\dev\\fantasy.old",
+      "description": "Project in fantasy.old",
+      "status": "development",
+      "priority": "medium",
+      "lastModified": "2025-09-08",
+      "todoCount": 27,
+      "urls": {
+        "app": "https://fantasy-old-kbrobedkgq-uc.a.run.app",
+        "repo": "https://github.com/sanpixel/fantasy.old",
+        "prd": "https://github.com/sanpixel/fantasy.old/blob/main/PRD.md",
+        "todos": "https://github.com/sanpixel/fantasy.old/blob/main/TODO.md",
+        "streamlit": "https://ldr-streamlit-kbrobedkgq-uc.a.run.app"
+      }
+    },
+    {
       "id": 2213,
       "name": "fbg.ai",
       "path": "C:\\dev\\fbg.ai",
