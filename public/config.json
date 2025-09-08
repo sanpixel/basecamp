@@ -1,6 +1,22 @@
 {
   "projects": [
     {
+      "id": 7914,
+      "name": "again",
+      "path": "C:\\dev\\again",
+      "description": "Project in again",
+      "status": "development",
+      "priority": "medium",
+      "lastModified": "2025-09-07",
+      "todoCount": 0,
+      "urls": {
+        "app": "https://again-kbrobedkgq-uc.a.run.app\r",
+        "repo": "https://github.com/sanpixel/again",
+        "prd": "https://github.com/sanpixel/again/blob/main/PRD.md",
+        "todos": "https://github.com/sanpixel/again/blob/main/TODO.md"
+      }
+    },
+    {
       "id": "2504",
       "name": "basecamp",
       "path": "C:\\dev\\home\\basecamp",
