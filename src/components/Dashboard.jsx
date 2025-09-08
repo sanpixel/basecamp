@@ -70,6 +70,11 @@ const Dashboard = () => {
     console.log(`Removed project: ${projectName}`);
   };
 
+  const validateUrls = () => {
+    // For now, just show alert - would need local API server to actually run script
+    alert('Run: npm run validate-urls');
+  };
+
   if (loading) {
     return (
       <div className="dashboard-loading">
@@ -82,7 +87,16 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <header className="dashboard-header">
-        <h1>ClockNumbers Developer Basecamp</h1>
+        <div className="header-top">
+          <h1>ClockNumbers Developer Basecamp</h1>
+          <button 
+            className="validate-btn"
+            onClick={validateUrls}
+            title="Validate project URLs"
+          >
+            🔗 Validate URLs
+          </button>
+        </div>
         <p className="dashboard-subtitle">
           <span 
             style={{cursor: 'pointer', textDecoration: 'underline'}} 

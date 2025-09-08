@@ -23,6 +23,7 @@
     "eject": "react-scripts eject",
     "discover": "node scripts/discover-projects.js",
     "detect-urls": "node scripts/detect-urls.js",
+    "validate-urls": "node scripts/validate-project-urls.js",
     "update-projects": "npm run discover && git add public/config.json && git commit -m \"Auto-update project discovery\" && git push",
     "reset-projects": "del /q public\\config.json 2>nul & npm run discover && git add public/config.json && git commit -m \"Reset project discovery\" && git push"
   },

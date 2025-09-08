@@ -115,6 +115,7 @@ A centralized basecamp-style home page that serves as a command center for all d
 - Project analytics/metrics
 - Time tracking integration
 - Calendar integration for project deadlines
+- **Discovery Update Button**: Trigger project discovery script from web interface via local API server
 
 ## Non-Functional Requirements
 ### Performance
@@ -242,6 +243,25 @@ C:\dev\home\
 - **TODO Completion:** 25% increase in TODO completion rate due to improved visibility
 
 ## Future Considerations
+### Local API Server for Discovery Updates
+**Priority:** Medium  
+**User Story:** As a developer, I want to trigger project discovery from the web interface so that I can update project data without running terminal commands
+
+**Technical Implementation:**
+- Simple Express.js server running on localhost:3001
+- Single endpoint `/api/discover` that executes `npm run discover`
+- CORS configuration to allow requests from React app
+- Error handling and progress feedback
+- Security considerations for local-only access
+
+**Acceptance Criteria:**
+- [ ] "Update Projects" button in dashboard header
+- [ ] Button triggers discovery script via API call
+- [ ] Loading state during discovery execution
+- [ ] Success/error notifications
+- [ ] Automatic refresh of project data after completion
+- [ ] API server can be started alongside React app
+
 ### Roadmap Items
 - Integration with version control systems
 - Automated project health monitoring
@@ -295,3 +315,4 @@ C:\dev\home\
 | Date | Version | Changes | Author |
 |------|---------|---------|--------|
 | 2025-08-26 | 1.0 | Initial PRD for Developer Home Dashboard | Simon |
+| 2025-09-08 | 1.1 | Added Local API Server feature for discovery updates | Simon |
