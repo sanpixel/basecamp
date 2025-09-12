@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const https = require('https');
 
 const DEV_DIR = 'C:\\dev';
 
@@ -25,14 +26,46 @@ function getCloudRunServices() {
   }
 }
 
+// Check if GitHub URL exists
+async function checkGitHubUrl(url) {
+  return new Promise((resolve) => {
+    const req = https.request(url, { method: 'HEAD' }, (res) => {
+      resolve(res.statusCode === 200);
+    });
+    req.on('error', () => resolve(false));
+    req.setTimeout(5000, () => {
+      req.destroy();
+      resolve(false);
+    });
+    req.end();
+  });
+}
+
+// Find correct branch for file
+async function findCorrectBranch(projectName, fileName) {
+  const branches = ['main', 'master', 'dev'];
+  
+  for (const branch of branches) {
+    const url = `https://github.com/sanpixel/${projectName}/blob/${branch}/${fileName}`;
+    if (await checkGitHubUrl(url)) {
+      return branch;
+    }
+  }
+  
+  return 'main'; // fallback
+}
+
 // Detect URLs using Cloud Run services list and project analysis
-function detectProjectUrls(projectPath, projectName, cloudRunServices) {
+async function detectProjectUrls(projectPath, projectName, cloudRunServices) {
+  const prdBranch = await findCorrectBranch(projectName, 'PRD.md');
+  const todoBranch = await findCorrectBranch(projectName, 'TODO.md');
+  
   const urls = {
     app: null,
     streamlit: null,
     repo: `https://github.com/sanpixel/${projectName}`,
-    prd: `https://github.com/sanpixel/${projectName}/blob/main/PRD.md`,
-    todos: `https://github.com/sanpixel/${projectName}/blob/main/TODO.md`
+    prd: `https://github.com/sanpixel/${projectName}/blob/${prdBranch}/PRD.md`,
+    todos: `https://github.com/sanpixel/${projectName}/blob/${todoBranch}/TODO.md`
   };
 
   console.log(`\n=== Analyzing ${projectName} ===`);
@@ -92,7 +125,7 @@ function detectProjectUrls(projectPath, projectName, cloudRunServices) {
 }
 
 // Scan all projects and detect URLs
-function detectAllUrls() {
+async function detectAllUrls() {
   console.log('🔍 Scanning C:\\dev for project URLs...\n');
   
   // Get all Cloud Run services first
@@ -131,7 +164,7 @@ function detectAllUrls() {
           fs.existsSync(dockerfile) ||
           fs.existsSync(readme)) {
         
-        detectProjectUrls(fullPath, entry, cloudRunServices);
+        await detectProjectUrls(fullPath, entry, cloudRunServices);
       }
     }
     
@@ -141,4 +174,4 @@ function detectAllUrls() {
 }
 
 // Run the detection
-detectAllUrls();
+detectAllUrls().catch(console.error);
