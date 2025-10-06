@@ -1,10 +1,7 @@
 # Basecamp TODO
 
 ## Current Sprint
-- [ ] Test config.repo.json merge system
-- [ ] Verify branch tag editing works in production
-- [ ] Add error handling for failed GitHub API calls
-- [ ] Optimize dashboard loading performance
+- [ ] TODOs should be limited to next steps, xfer to BACKLOG.md
 
 ## Phase 2 Features
 - [ ] Add project health monitoring indicators
