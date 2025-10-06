@@ -365,8 +365,15 @@
 /* Action Buttons */
 .project-actions {
   display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.project-actions-secondary {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 8px;
+  margin-top: 8px;
 }
 
 .action-button {

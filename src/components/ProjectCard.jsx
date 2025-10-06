@@ -147,15 +147,6 @@ const ProjectCard = ({ project, onOpenUrl, onDeleteProject, onUpdateProject }) =
           Open App
         </button>
         
-        <button
-          className="action-button secondary"
-          onClick={() => onOpenUrl(`https://github.com/sanpixel/${project.name}/blob/${project.branch || 'main'}/BACKLOG.md`)}
-          title="View Backlog"
-        >
-          <span className="action-icon">📝</span>
-          Backlog
-        </button>
-        
         {project.urls.streamlit && (
           <button
             className="action-button primary"
@@ -166,14 +157,16 @@ const ProjectCard = ({ project, onOpenUrl, onDeleteProject, onUpdateProject }) =
             Streamlit
           </button>
         )}
-        
+      </div>
+
+      <div className="project-actions-secondary">
         <button
           className="action-button secondary"
-          onClick={() => onOpenUrl(project.urls.repo)}
-          title="Open Repository"
+          onClick={() => onOpenUrl(`https://github.com/sanpixel/${project.name}/blob/${project.branch || 'main'}/BACKLOG.md`)}
+          title="View Backlog"
         >
-          <span className="action-icon">📂</span>
-          Repository
+          <span className="action-icon">📝</span>
+          Backlog
         </button>
         
         <button
@@ -192,6 +185,17 @@ const ProjectCard = ({ project, onOpenUrl, onDeleteProject, onUpdateProject }) =
         >
           <span className="action-icon">✅</span>
           TODOs
+        </button>
+      </div>
+
+      <div className="project-actions-secondary">
+        <button
+          className="action-button secondary"
+          onClick={() => onOpenUrl(project.urls.repo)}
+          title="Open Repository"
+        >
+          <span className="action-icon">📂</span>
+          Repository
         </button>
         
         <button
