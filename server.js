@@ -6,32 +6,42 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const CONFIG_PATH = path.join(__dirname, 'public', 'config.json');
+const REPO_CONFIG_PATH = path.join(__dirname, 'public', 'config.repo.json');
 
 app.use(cors());
 app.use(express.json());
 
-// Update project endpoint
-app.put('/api/projects/:projectName', (req, res) => {
+// Update branch override endpoint
+app.put('/api/branch-override/:projectName', (req, res) => {
   try {
-    // Read current config
-    const configData = fs.readFileSync(CONFIG_PATH, 'utf8');
-    const config = JSON.parse(configData);
+    let repoConfig = { projects: [] };
     
-    // Find and update project
-    const projectIndex = config.projects.findIndex(p => p.name === req.params.projectName);
-    if (projectIndex === -1) {
-      return res.status(404).json({ error: 'Project not found' });
+    // Read existing repo config if it exists
+    if (fs.existsSync(REPO_CONFIG_PATH)) {
+      const repoConfigData = fs.readFileSync(REPO_CONFIG_PATH, 'utf8');
+      repoConfig = JSON.parse(repoConfigData);
     }
     
-    config.projects[projectIndex] = req.body;
+    // Find existing override or create new one
+    const existingIndex = repoConfig.projects.findIndex(p => p.name === req.params.projectName);
+    const override = {
+      name: req.body.name,
+      branch: req.body.branch
+    };
     
-    // Write updated config
-    fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2));
+    if (existingIndex >= 0) {
+      repoConfig.projects[existingIndex] = override;
+    } else {
+      repoConfig.projects.push(override);
+    }
     
-    res.json({ success: true, project: req.body });
+    // Write updated repo config
+    fs.writeFileSync(REPO_CONFIG_PATH, JSON.stringify(repoConfig, null, 2));
+    
+    res.json({ success: true, override: override });
   } catch (error) {
-    console.error('Error updating project:', error);
-    res.status(500).json({ error: 'Failed to update project' });
+    console.error('Error updating branch override:', error);
+    res.status(500).json({ error: 'Failed to update branch override' });
   }
 });
 

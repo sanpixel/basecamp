@@ -23,9 +23,42 @@ const Dashboard = () => {
 
   const loadProjects = async () => {
     try {
+      // Load base config
       const response = await fetch('/config.json');
       const data = await response.json();
-      setProjects(data.projects);
+      
+      // Load branch overrides if they exist
+      try {
+        const overrideResponse = await fetch('/config.repo.json');
+        if (overrideResponse.ok) {
+          const overrides = await overrideResponse.json();
+          
+          // Merge branch overrides into projects
+          const mergedProjects = data.projects.map(project => {
+            const override = overrides.projects?.find(p => p.name === project.name);
+            if (override && override.branch) {
+              return {
+                ...project,
+                branch: override.branch,
+                urls: {
+                  ...project.urls,
+                  prd: `https://github.com/sanpixel/${project.name}/blob/${override.branch}/PRD.md`,
+                  todos: `https://github.com/sanpixel/${project.name}/blob/${override.branch}/TODO.md`
+                }
+              };
+            }
+            return project;
+          });
+          
+          setProjects(mergedProjects);
+        } else {
+          setProjects(data.projects);
+        }
+      } catch (overrideError) {
+        // No overrides file, use base config
+        setProjects(data.projects);
+      }
+      
       setLoading(false);
     } catch (error) {
       console.error('Error loading projects:', error);
@@ -76,23 +109,26 @@ const Dashboard = () => {
     );
     setProjects(updatedProjects);
     
-    // Save to config.json via backend
+    // Save branch override to config.repo.json
     try {
-      const response = await fetch(`http://localhost:3001/api/projects/${updatedProject.name}`, {
+      const response = await fetch(`http://localhost:3001/api/branch-override/${updatedProject.name}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(updatedProject),
+        body: JSON.stringify({
+          name: updatedProject.name,
+          branch: updatedProject.branch
+        }),
       });
       
       if (!response.ok) {
-        throw new Error('Failed to save project');
+        throw new Error('Failed to save branch override');
       }
       
-      console.log('Project saved:', updatedProject.name, 'branch:', updatedProject.branch);
+      console.log('Branch override saved:', updatedProject.name, 'branch:', updatedProject.branch);
     } catch (error) {
-      console.error('Error saving project:', error);
+      console.error('Error saving branch override:', error);
       // Revert local state on error
       loadProjects();
     }
