@@ -1,48 +1,30 @@
 # Basecamp TODO
 
-## Phase 1: Core Dashboard (MVP)
-- [x] Responsive dashboard with project grid/card layout
-- [x] JSON configuration system for project metadata
-- [x] One-click navigation to apps, PRDs, and repositories
-- [x] Project search and filtering functionality
-- [x] Dark mode theme
-- [x] Project ID badges (#2501, #2502, etc.)
+## Current Sprint
+- [ ] Test config.repo.json merge system
+- [ ] Verify branch tag editing works in production
+- [ ] Add error handling for failed GitHub API calls
+- [ ] Optimize dashboard loading performance
 
-## Phase 2: TODO Integration
-- [x] Cross-project TODO aggregation and display
-- [x] Clickable stats navigation to TODO pages
-- [x] TODO scraping from GitHub repos
-- [x] Project delete/hide functionality with password protection
-- [ ] Interactive TODO management (add, complete, prioritize)
-- [ ] TODO filtering by project, status, and priority
-- [ ] Real-time TODO count indicators on project cards
+## Phase 2 Features
+- [ ] Add project health monitoring indicators
+- [ ] Implement keyboard shortcuts for navigation
+- [ ] Add project analytics and metrics dashboard
+- [ ] Create mobile-responsive improvements
 
-## Phase 3: Enhancement & Polish
-- [ ] Project status indicators with health monitoring
-- [ ] Advanced project analytics and metrics
-- [ ] Keyboard shortcuts and accessibility features
-- [ ] Integration with version control for activity tracking
-
-## New Feature Ideas
-- [ ] **In-browser PRD/TODO editing** - Add editable window functionality
-  - Research options: GitHub API + Monaco Editor, React-MD-Editor, CodeMirror
-  - Could use GitHub REST API with personal access token
-  - Modal editor with live markdown preview
-  - Save changes directly back to GitHub repo
-  - Add "Edit PRD" and "Edit TODO" buttons to project cards
-  
 ## Bug Fixes
-- [ ] Fix any mobile responsiveness issues
-- [ ] Optimize loading performance
-- [ ] Add error handling for failed API calls
+- [ ] Fix line ending issues with config.json on Windows
+- [ ] Handle missing PRD/TODO files gracefully
+- [ ] Improve error messages for failed saves
+
+## Future Enhancements
+- [ ] In-browser PRD/TODO editing with GitHub API
+- [ ] Real-time collaboration features
+- [ ] Integration with project management tools
+- [ ] Automated deployment status tracking
 
 ## Deployment
-- [x] Docker containerization setup
-- [x] GitHub Actions workflow configured
-- [ ] Deploy to Google Cloud Run
-- [ ] Set up custom domain (basecamp.clocknumbers.com)
-
-## Documentation
-- [x] Complete PRD document
-- [ ] Add usage instructions to README
-- [ ] Document deployment process
+- [x] Docker containerization
+- [x] GitHub Actions CI/CD
+- [x] Google Cloud Run deployment
+- [ ] Custom domain setup (basecamp.clocknumbers.com)

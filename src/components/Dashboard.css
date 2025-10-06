@@ -365,7 +365,7 @@
 /* Action Buttons */
 .project-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 8px;
 }
 
@@ -387,7 +387,6 @@
 .action-button.primary {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  grid-column: 1 / -1;
 }
 
 .action-button.primary:hover {
@@ -459,9 +458,5 @@
 @media (max-width: 480px) {
   .project-actions {
     grid-template-columns: 1fr;
-  }
-  
-  .action-button.primary {
-    grid-column: 1;
   }
 }

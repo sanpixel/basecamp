@@ -147,6 +147,15 @@ const ProjectCard = ({ project, onOpenUrl, onDeleteProject, onUpdateProject }) =
           Open App
         </button>
         
+        <button
+          className="action-button secondary"
+          onClick={() => onOpenUrl(`https://github.com/sanpixel/${project.name}/blob/${project.branch || 'main'}/BACKLOG.md`)}
+          title="View Backlog"
+        >
+          <span className="action-icon">📝</span>
+          Backlog
+        </button>
+        
         {project.urls.streamlit && (
           <button
             className="action-button primary"
