@@ -70,6 +70,34 @@ const Dashboard = () => {
     console.log(`Removed project: ${projectName}`);
   };
 
+  const updateProject = async (updatedProject) => {
+    const updatedProjects = projects.map(p => 
+      p.name === updatedProject.name ? updatedProject : p
+    );
+    setProjects(updatedProjects);
+    
+    // Save to config.json via backend
+    try {
+      const response = await fetch(`http://localhost:3001/api/projects/${updatedProject.name}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedProject),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to save project');
+      }
+      
+      console.log('Project saved:', updatedProject.name, 'branch:', updatedProject.branch);
+    } catch (error) {
+      console.error('Error saving project:', error);
+      // Revert local state on error
+      loadProjects();
+    }
+  };
+
   const validateUrls = () => {
     // For now, just show alert - would need local API server to actually run script
     alert('Run: npm run validate-urls');
@@ -156,6 +184,7 @@ const Dashboard = () => {
               project={project}
               onOpenUrl={openUrl}
               onDeleteProject={deleteProject}
+              onUpdateProject={updateProject}
             />
           ))
         )}

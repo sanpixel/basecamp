@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const ProjectCard = ({ project, onOpenUrl, onDeleteProject }) => {
+const ProjectCard = ({ project, onOpenUrl, onDeleteProject, onUpdateProject }) => {
+  const [isEditingBranch, setIsEditingBranch] = useState(false);
+  const [branchValue, setBranchValue] = useState(project.branch || 'main');
   const getStatusColor = (status) => {
     switch (status) {
       case 'active':
@@ -37,13 +39,71 @@ const ProjectCard = ({ project, onOpenUrl, onDeleteProject }) => {
     });
   };
 
+  const handleBranchEdit = () => {
+    setIsEditingBranch(true);
+  };
+
+  const handleBranchSave = () => {
+    if (branchValue !== (project.branch || 'main')) {
+      const updatedProject = {
+        ...project,
+        branch: branchValue,
+        urls: {
+          ...project.urls,
+          prd: `https://github.com/sanpixel/${project.name}/blob/${branchValue}/PRD.md`,
+          todos: `https://github.com/sanpixel/${project.name}/blob/${branchValue}/TODO.md`
+        }
+      };
+      onUpdateProject(updatedProject);
+    }
+    setIsEditingBranch(false);
+  };
+
+  const handleBranchCancel = () => {
+    setBranchValue(project.branch || 'main');
+    setIsEditingBranch(false);
+  };
+
+  const handleBranchKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleBranchSave();
+    } else if (e.key === 'Escape') {
+      handleBranchCancel();
+    }
+  };
+
   return (
     <div className="project-card">
       <div className="project-card-header">
         <div className="project-info">
           <div className="project-title">
             <h3 className="project-name">{project.name}</h3>
-            {project.id && <span className="project-id">#{project.id}</span>}
+            <div className="project-meta-inline">
+              {project.id && <span className="project-id">#{project.id}</span>}
+              <span className="branch-tag">
+                [
+                {isEditingBranch ? (
+                  <input
+                    type="text"
+                    value={branchValue}
+                    onChange={(e) => setBranchValue(e.target.value)}
+                    onBlur={handleBranchSave}
+                    onKeyDown={handleBranchKeyPress}
+                    className="branch-input"
+                    autoFocus
+                  />
+                ) : (
+                  <span 
+                    className="branch-name" 
+                    onClick={handleBranchEdit}
+                    title="Click to edit branch"
+                  >
+                    {project.branch || 'main'}
+                  </span>
+                )}
+                ]
+              </span>
+            </div>
           </div>
           <div className="project-badges">
             <span

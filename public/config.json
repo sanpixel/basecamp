@@ -1,141 +1,75 @@
 {
   "projects": [
     {
-      "id": 1725,
-      "name": "again",
-      "path": "C:\\dev\\again",
-      "description": "Project in again",
+      "id": 2434,
+      "name": "bakery",
+      "path": "C:\\dev\\bakery",
+      "description": "Project in bakery",
       "status": "development",
       "priority": "medium",
-      "lastModified": "2025-09-07",
-      "todoCount": 0,
+      "lastModified": "2025-09-29",
+      "todoCount": 4,
       "urls": {
-        "app": "https://again-kbrobedkgq-uc.a.run.app\r",
-        "repo": "https://github.com/sanpixel/again",
-        "prd": "https://github.com/sanpixel/again/blob/main/PRD.md",
-        "todos": "https://github.com/sanpixel/again/blob/main/TODO.md"
-      }
+        "app": "https://bakery-kbrobedkgq-uc.a.run.app\r",
+        "repo": "https://github.com/sanpixel/bakery",
+        "prd": "https://github.com/sanpixel/bakery/blob/wtf/PRD.md",
+        "todos": "https://github.com/sanpixel/bakery/blob/wtf/TODO.md"
+      },
+      "branch": "wtf"
     },
     {
-      "id": 4259,
+      "id": 1576,
       "name": "basecamp",
       "path": "C:\\dev\\basecamp",
       "description": "Project in basecamp",
       "status": "development",
       "priority": "medium",
-      "lastModified": "2025-09-08",
+      "lastModified": "2025-09-12",
       "todoCount": 15,
       "urls": {
-        "app": "https://clocknumbers.com",
-        "streamlit": null,
+        "app": "https://basecamp-kbrobedkgq-uc.a.run.app",
         "repo": "https://github.com/sanpixel/basecamp",
-        "prd": "https://github.com/sanpixel/basecamp/blob/main/PRD.md",
-        "todos": "https://github.com/sanpixel/basecamp/blob/main/TODO.md"
-      }
+        "prd": "https://github.com/sanpixel/basecamp/blob/master/PRD.md",
+        "todos": "https://github.com/sanpixel/basecamp/blob/master/TODO.md"
+      },
+      "branch": "master"
     },
     {
-      "id": 6893,
-      "name": "eights",
-      "path": "C:\\dev\\eights",
-      "description": "Project in eights",
-      "status": "development",
-      "priority": "medium",
-      "lastModified": "2025-09-08",
-      "todoCount": 0,
-      "urls": {
-        "app": "https://eights-kbrobedkgq-uc.a.run.app\r",
-        "repo": "https://github.com/sanpixel/eights",
-        "prd": "https://github.com/sanpixel/eights/blob/main/PRD.md",
-        "todos": "https://github.com/sanpixel/eights/blob/main/TODO.md"
-      }
-    },
-    {
-      "id": 6755,
+      "id": 6495,
       "name": "fantasy.ai",
       "path": "C:\\dev\\fantasy.ai",
       "description": "Project in fantasy.ai",
       "status": "development",
       "priority": "medium",
-      "lastModified": "2025-09-03",
-      "todoCount": 27,
+      "lastModified": "2025-10-03",
+      "todoCount": 0,
       "urls": {
         "app": "https://fantasy-ai-kbrobedkgq-uc.a.run.app\r",
-        "streamlit": null,
         "repo": "https://github.com/sanpixel/fantasy.ai",
-        "prd": "https://github.com/sanpixel/fantasy.ai/blob/main/PRD.md",
-        "todos": "https://github.com/sanpixel/fantasy.ai/blob/main/TODO.md"
-      }
+        "prd": "https://github.com/sanpixel/fantasy.ai/blob/master/PRD.md",
+        "todos": "https://github.com/sanpixel/fantasy.ai/blob/master/TODO.md"
+      },
+      "branch": "master"
     },
     {
-      "id": 8893,
-      "name": "fantasy.old",
-      "path": "C:\\dev\\fantasy.old",
-      "description": "Project in fantasy.old",
-      "status": "development",
-      "priority": "medium",
-      "lastModified": "2025-09-08",
-      "todoCount": 27,
-      "urls": {
-        "app": "https://fantasy-old-kbrobedkgq-uc.a.run.app",
-        "repo": "https://github.com/sanpixel/fantasy.old",
-        "prd": "https://github.com/sanpixel/fantasy.old/blob/main/PRD.md",
-        "todos": "https://github.com/sanpixel/fantasy.old/blob/main/TODO.md",
-        "streamlit": "https://ldr-streamlit-kbrobedkgq-uc.a.run.app"
-      }
-    },
-    {
-      "id": 2213,
-      "name": "fbg.ai",
-      "path": "C:\\dev\\fbg.ai",
-      "description": "Project in fbg.ai",
-      "status": "development",
-      "priority": "medium",
-      "lastModified": "2025-09-03",
-      "todoCount": 27,
-      "urls": {
-        "app": "https://fbg-ai-kbrobedkgq-uc.a.run.app\r",
-        "repo": "https://github.com/sanpixel/fbg.ai",
-        "prd": "https://github.com/sanpixel/fbg.ai/blob/main/PRD.md",
-        "todos": "https://github.com/sanpixel/fbg.ai/blob/main/TODO.md",
-        "streamlit": "https://ldr-streamlit-kbrobedkgq-uc.a.run.app"
-      }
-    },
-    {
-      "id": 3098,
+      "id": 2297,
       "name": "ldr.ai",
       "path": "C:\\dev\\ldr.ai",
       "description": "Project in ldr.ai",
       "status": "development",
       "priority": "medium",
-      "lastModified": "2025-09-01",
-      "todoCount": 25,
+      "lastModified": "2025-09-17",
+      "todoCount": 26,
       "urls": {
-        "app": "https://ldr.clocknumbers.com",
-        "streamlit": "https://streamlit.clocknumbers.com",
+        "app": "https://ldr-ai-kbrobedkgq-uc.a.run.app\r",
         "repo": "https://github.com/sanpixel/ldr.ai",
         "prd": "https://github.com/sanpixel/ldr.ai/blob/dev/PRD.md",
-        "todos": "https://github.com/sanpixel/ldr.ai/blob/main/TODO.md"
+        "todos": "https://github.com/sanpixel/ldr.ai/blob/main/TODO.md",
+        "streamlit": "https://ldr-streamlit-kbrobedkgq-uc.a.run.app"
       }
     },
     {
-      "id": 2962,
-      "name": "next",
-      "path": "C:\\dev\\next",
-      "description": "Project in next",
-      "status": "development",
-      "priority": "medium",
-      "lastModified": "2025-09-08",
-      "todoCount": 0,
-      "urls": {
-        "app": "https://clocknumbers.com",
-        "streamlit": null,
-        "repo": "https://github.com/sanpixel/next",
-        "prd": "https://github.com/sanpixel/next/blob/main/PRD.md",
-        "todos": "https://github.com/sanpixel/next/blob/main/TODO.md"
-      }
-    },
-    {
-      "id": 3293,
+      "id": 4487,
       "name": "ratio.ai",
       "path": "C:\\dev\\ratio.ai",
       "description": "Project in ratio.ai",
@@ -144,28 +78,26 @@
       "lastModified": "2025-09-03",
       "todoCount": 31,
       "urls": {
-        "app": "https://ratio.clocknumbers.com",
-        "streamlit": null,
+        "app": "https://ratio-ai-kbrobedkgq-uc.a.run.app\r",
         "repo": "https://github.com/sanpixel/ratio.ai",
         "prd": "https://github.com/sanpixel/ratio.ai/blob/main/PRD.md",
         "todos": "https://github.com/sanpixel/ratio.ai/blob/dev/TODO.md"
       }
     },
     {
-      "id": 9421,
+      "id": 5322,
       "name": "surveydisco.ai",
       "path": "C:\\dev\\surveydisco.ai",
       "description": "Project in surveydisco.ai",
       "status": "development",
       "priority": "medium",
-      "lastModified": "2025-09-01",
-      "todoCount": 0,
+      "lastModified": "2025-09-17",
+      "todoCount": 144,
       "urls": {
-        "app": "https://gus.clocknumbers.com",
-        "streamlit": null,
+        "app": "https://surveydisco-ai-kbrobedkgq-uc.a.run.app",
         "repo": "https://github.com/sanpixel/surveydisco.ai",
         "prd": "https://github.com/sanpixel/surveydisco.ai/blob/master/PRD.md",
-        "todos": "https://github.com/sanpixel/surveydisco.ai/blob/main/TODO.md"
+        "todos": "https://github.com/sanpixel/surveydisco.ai/blob/master/TODO.md"
       }
     }
   ]
